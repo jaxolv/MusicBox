@@ -1,6 +1,8 @@
 import express from "express";
-import routes from "./routes";
 import db from "./database";
+
+import routesArtists from "./routes/artist/routesArtists";
+import routesBands from "./routes/band/routesBands";
 
 class App {
     constructor() {
@@ -15,8 +17,12 @@ class App {
         this.server.use(express.json());
     }
 
-    routes() {
-        this.server.use(routes);
+    routesArtists() {
+        this.server.use(routesArtists);
+    }
+
+    routesBands() {
+        this.server.use(routesBands);
     }
 
     async intializeDatabase() {
