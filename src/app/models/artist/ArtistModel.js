@@ -11,15 +11,11 @@ ArtistModel.init(
             type: Sequelize.UUIDV4(),
             primaryKey: true
         },
-        name: Sequelize.STRING(30),
+        name: Sequelize.STRING,
         born: Sequelize.DATEONLY,
         death: Sequelize.DATEONLY,
-        instrument: Sequelize.ENUM({
-            values: ['vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other']
-        }),
-        secondInstrument: Sequelize.ENUM({
-            values: ['vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other']
-        }),
+        instrument: Sequelize.ENUM,
+        secondInstrument: Sequelize.ENUM,
         otherInstrument: Sequelize.STRING(20),
         songwriter: Sequelize.BOOLEAN,
         producer: Sequelize.BOOLEAN
