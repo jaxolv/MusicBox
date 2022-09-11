@@ -10,7 +10,8 @@ class App {
 
         this.intializeDatabase();
         this.middlewares();
-        this.routes();
+
+        this.routesArtists();
     }
 
     middlewares() {
@@ -19,10 +20,6 @@ class App {
 
     routesArtists() {
         this.server.use(routesArtists);
-    }
-
-    routesBands() {
-        this.server.use(routesBands);
     }
 
     async intializeDatabase() {

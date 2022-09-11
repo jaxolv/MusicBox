@@ -30,7 +30,7 @@ routes.post("/artist", (req, res) =>
 routes.get("/artist", (req, res) =>
     createArtistController.create(req, res)
 );
-routes.update("/artist", (req, res) =>
+routes.put("/artist", (req, res) =>
     updateArtistController.update(req, res)
 );
 routes.delete("/artist", (req, res) =>

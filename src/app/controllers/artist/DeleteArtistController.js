@@ -1,4 +1,4 @@
-import DeleteArtistService from "../services/artist/DeleteArtistService";
+import DeleteArtistService from "../../services/artist/DeleteArtistService";
 
 export default class DeleteArtistController {
     constructor() { this.service = new DeleteArtistService() }

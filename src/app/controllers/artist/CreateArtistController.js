@@ -1,4 +1,4 @@
-import CreateArtistService from "../services/artist/CreateArtistService";
+import CreateArtistService from "../../services/artist/CreateArtistService";
 
 export default class CreateArtistController {
     constructor() { this.service = new CreateArtistService() };

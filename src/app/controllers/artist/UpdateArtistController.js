@@ -1,4 +1,4 @@
-import UpdateArtistService from "../services/artist/UpdateArtistService";
+import UpdateArtistService from "../../services/artist/UpdateArtistService";
 
 export default class UpdateArtistController {
     constructor() { this.service = new UpdateArtistService }

@@ -1,4 +1,4 @@
-import ListArtistsService from "../services/artist/ListArtistsService";
+import ListArtistsService from "../../services/artist/ListArtistsService";
 
 export default class ListArtistsController {
     constructor() { this.service = new ListArtistsService(); }
