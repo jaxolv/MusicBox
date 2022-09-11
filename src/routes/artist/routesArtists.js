@@ -24,16 +24,16 @@ const updateArtistController = new UpdateArtistController();
 const deleteArtistController = new DeleteArtistController();
 
 // CRUD:
-routes.post("/artist", (req, res) =>
-    listArtistsController.listAll(req, res)
-);
-routes.get("/artist", (req, res) =>
+routes.post("/artists", (req, res) =>
     createArtistController.create(req, res)
 );
-routes.put("/artist", (req, res) =>
+routes.get("/artists", (req, res) =>
+    listArtistsController.listAll(req, res)
+);
+routes.put("/artists/:id", (req, res) =>
     updateArtistController.update(req, res)
 );
-routes.delete("/artist", (req, res) =>
+routes.delete("/artists/:id", (req, res) =>
     deleteArtistController.delete(req, res)
 );
 

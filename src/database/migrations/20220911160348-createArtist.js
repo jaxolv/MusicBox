@@ -2,7 +2,7 @@
 
 module.exports = {
   async up (queryInterface, Sequelize) {
-    return await queryInterface.createTable('artist', {
+    return await queryInterface.createTable('artists', {
       id: {
         type: Sequelize.UUID,
         defaltValue: Sequelize.UUIDV4,
@@ -22,9 +22,7 @@ module.exports = {
         allowNull: true,
       },
       instrument: {
-        type: Sequelize.ENUM({
-          values: ['vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other']
-      }),
+        type: Sequelize.ENUM('vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other'),
         allowNull: false,
       },
       secondInstrument: {
@@ -32,7 +30,7 @@ module.exports = {
         allowNull: true,
       },
       otherInstrument: {
-        type: Sequelize.ENUM('vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other'),
+        type: Sequelize.STRING(20),
         allowNull: true,
       },
       songwriter: {
@@ -47,6 +45,6 @@ module.exports = {
   },
 
   async down (queryInterface, Sequelize) {
-    return await queryInterface.dropTable('artist');
+    return await queryInterface.dropTable('artists');
   }
 };

@@ -14,16 +14,20 @@ ArtistModel.init(
         name: Sequelize.STRING,
         born: Sequelize.DATEONLY,
         death: Sequelize.DATEONLY,
-        instrument: Sequelize.ENUM,
-        secondInstrument: Sequelize.ENUM,
+        instrument: Sequelize.ENUM({
+            values: ['vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other']
+        }),
+        secondInstrument: Sequelize.ENUM({
+            values: ['vocal', 'guitar', 'bass', 'drums', 'keyboard', 'percussion', 'other']
+        }),
         otherInstrument: Sequelize.STRING(20),
         songwriter: Sequelize.BOOLEAN,
         producer: Sequelize.BOOLEAN
     },
     {
         sequelize,
-        modelName: "artist",
-        timestamps: true
+        modelName: "artists",
+        timestamps: false
     }
 )
 

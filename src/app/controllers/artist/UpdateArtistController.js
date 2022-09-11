@@ -14,7 +14,7 @@ export default class UpdateArtistController {
             songwriter,
             producer } = req.body
 
-        const resulte = this.service.updateArtist(
+        const resulte = await this.service.updateArtist(
             id,
             name,
             born,
