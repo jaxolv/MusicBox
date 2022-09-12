@@ -1,24 +1,49 @@
-/* import Router from "express";
+import Router from "express";
 import multer from "multer";
 
 // upload files:
+import UploadFileController from "../../app/upload/UploadFileController"
 import multerConfig from "../../config/multer"
+
 const uploadFile = multer({ storage: multerConfig })
 
 // validator:
+import IndexValidator from "../../middlewares/id/IndexValidator";
+import BandsValidator from "../../middlewares/band/BandsValidator"
 
 // controllers:
-import x from "../../app/controllers/band";
-import y from "../../app/controllers/band";
-import z from "../../app/controllers/band";
-import w from "../../app/controllers/band";
-
-import UploadFileController from "../../app/upload/UploadFileController"
+import CreateBandController from "../../app/controllers/band/CreateBandController";
+import ListBandsController from "../../app/controllers/band/ListBandsController";
+import UpdateBandController from "../../app/controllers/band/UpdateBandController";
+import DeleteBandController from "../../app/controllers/band/DeleteBandController";
 
 const routes = new Router();
 
 // instâncias:
+const createBandController = new CreateBandController();
+const listBandsController = new ListBandsController();
+const updateBandController = new UpdateBandController();
+const deleteBandBandController = new DeleteBandController();
 
 // CRUD:
+routes.post("/bands",
+    BandsValidator, (req, res) =>
+    createBandController.create(req, res)
+);
+routes.get("/bands", (req, res) =>
+    listBandsController.listAll(req, res)
+);
+routes.put("/bands/:id",
+    IndexValidator, BandsValidator, (req, res) =>
+    updateBandController.update(req, res)
+);
+routes.delete("/bands/:id",
+    IndexValidator, (req, res) =>
+    deleteBandBandController.delete(req, res)
+);
 
-export default routes; */
+routes.post("/uploads", uploadFile.single("file"), (req, res) =>
+    UploadFileController.storeFile(req, res)
+);
+
+export default routes;

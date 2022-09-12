@@ -2,7 +2,7 @@ import express from "express";
 import db from "./database";
 
 import routesArtists from "./routes/artist/routesArtists";
-import routesBands from "./routes/band/routesBands";
+import routesBands from "./routes/band/routesBands"
 
 class App {
     constructor() {
@@ -12,6 +12,7 @@ class App {
         this.middlewares();
 
         this.routesArtists();
+        this.routesBands()
     }
 
     middlewares() {
@@ -20,6 +21,10 @@ class App {
 
     routesArtists() {
         this.server.use(routesArtists);
+    }
+
+    routesBands() {
+        this.server.use(routesBands)
     }
 
     async intializeDatabase() {
