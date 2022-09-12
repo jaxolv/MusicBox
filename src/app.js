@@ -3,6 +3,7 @@ import db from "./database";
 
 import routesArtists from "./routes/artist/routesArtists";
 import routesBands from "./routes/band/routesBands"
+// import routesMembers from "./routes/members/routesMembers"
 
 class App {
     constructor() {
@@ -11,20 +12,17 @@ class App {
         this.intializeDatabase();
         this.middlewares();
 
-        this.routesArtists();
-        this.routesBands()
+        this.routes();
     }
 
     middlewares() {
         this.server.use(express.json());
     }
 
-    routesArtists() {
+    routes() {
         this.server.use(routesArtists);
-    }
-
-    routesBands() {
         this.server.use(routesBands)
+        // this.server.use(routesMembers)
     }
 
     async intializeDatabase() {

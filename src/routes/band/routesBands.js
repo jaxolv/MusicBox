@@ -8,7 +8,7 @@ import multerConfig from "../../config/multer"
 const uploadFile = multer({ storage: multerConfig })
 
 // validator:
-import IndexValidator from "../../middlewares/id/IndexValidator";
+import PrimaryKeyValidator from "../../middlewares/id/PrimaryKeyValidator";
 import BandsValidator from "../../middlewares/band/BandsValidator"
 
 // controllers:
@@ -34,11 +34,11 @@ routes.get("/bands", (req, res) =>
     listBandsController.listAll(req, res)
 );
 routes.put("/bands/:id",
-    IndexValidator, BandsValidator, (req, res) =>
+    PrimaryKeyValidator, BandsValidator, (req, res) =>
     updateBandController.update(req, res)
 );
 routes.delete("/bands/:id",
-    IndexValidator, (req, res) =>
+    PrimaryKeyValidator, (req, res) =>
     deleteBandBandController.delete(req, res)
 );
 

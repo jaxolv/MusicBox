@@ -9,7 +9,7 @@ const uploadFile = multer({ storage: multerConfig })
 
 // validator:
 import ArtistsValidator from "../../middlewares/artist/ArtistsValidator";
-import IndexValidator from "../../middlewares/id/IndexValidator";
+import PrimaryKeyValidator from "../../middlewares/id/PrimaryKeyValidator";
 
 // controllers:
 import CreateArtistController from "../../app/controllers/artist/CreateArtistController";
@@ -35,11 +35,11 @@ routes.get("/artists", (req, res) =>
     listArtistsController.listAll(req, res)
 );
 routes.put("/artists/:id",
-    IndexValidator, ArtistsValidator, (req, res) =>
-        updateArtistController.update(req, res)
+    PrimaryKeyValidator, ArtistsValidator, (req, res) =>
+    updateArtistController.update(req, res)
 );
 routes.delete("/artists/:id",
-    IndexValidator, (req, res) =>
+    PrimaryKeyValidator, (req, res) =>
     deleteArtistController.delete(req, res)
 );
 
