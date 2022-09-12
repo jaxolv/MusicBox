@@ -1,20 +1,24 @@
-/* import Router from "express";
+import Router from "express";
 
 // validator:
 import PrimaryKeyValidator from "../../middlewares/id/PrimaryKeyValidator";
 
 // controllers:
-import CreateMembersController from "../../app/controllers/members/CreateMembersController";
+import CreateMemberController from "../../app/controllers/members/CreateMemberController";
+import ListMembersController from "../../app/controllers/members/ListMembersController"
 
 const routes = new Router();
 
 // instâncias:
-const createMembersController = new CreateMembersController();
+const createMemberController = new CreateMemberController();
+const listMembersController = new ListMembersController();
 
 // CRUD:
 routes.post("/members", (req, res) =>
-    createMembersController.create(req, res)
+    createMemberController.create(req, res)
+);
+routes.get("/members", (req, res) =>
+    listMembersController.listAll(req, res)
 );
 
 export default routes;
- */
