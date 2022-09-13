@@ -1,18 +1,20 @@
 import UpdateArtistService from "../../services/artist/UpdateArtistService";
 
 export default class UpdateArtistController {
-    constructor() { this.service = new UpdateArtistService }
+    constructor() { this.service = new UpdateArtistService() }
 
     async update(req, res) {
         const { id } = req.params
-        const { name,
+        const {
+            name,
             born,
             death,
             instrument,
             secondInstrument,
             otherInstrument,
             songwriter,
-            producer } = req.body
+            producer
+        } = req.body
 
         const resulte = await this.service.updateArtist(
             id,
