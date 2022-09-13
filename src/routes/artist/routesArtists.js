@@ -17,7 +17,6 @@ import ListArtistsController from "../../app/controllers/artist/ListArtistsContr
 import UpdateArtistController from "../../app/controllers/artist/UpdateArtistController";
 import DeleteArtistController from "../../app/controllers/artist/DeleteArtistController";
 
-
 const routes = new Router();
 
 // instâncias:
