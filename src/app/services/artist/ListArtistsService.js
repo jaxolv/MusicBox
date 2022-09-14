@@ -13,4 +13,17 @@ export default class ListArtistsService {
             return { erro: error.message }
         }
     }
+
+    async listArtistByInstrument(instr) {
+        try {
+            const list = await ArtistModel.findAll({
+                where: { instrument: instr }
+            })
+
+            return list
+        } catch (error) {
+            console.log(error)
+            return { erro: error.message }
+        }
+    }
 }

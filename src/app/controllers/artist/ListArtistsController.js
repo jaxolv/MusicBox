@@ -8,4 +8,12 @@ export default class ListArtistsController {
 
         return res.json(list)
     }
+
+    async listByInstrument(req, res) {
+        const { instrument } = req.params
+
+        const list = await this.service.listArtistByInstrument(instrument);
+
+        return res.json(list)
+    }
 }

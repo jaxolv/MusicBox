@@ -4,47 +4,50 @@ async function ArtistsValidator(req, res, next) {
     const schema = yup.object().shape({
         name: yup
             .string()
-            .max(30, "No máximo, 30 caracteres.")
             .strict()
-            .required()
-            .typeError("Apenas texto."),
+            .max(30, "No máximo, 30 caracteres.")
+            .required("O campo 'nome' é obrigatório.")
+            .typeError("name"),
         born: yup
             .string()
             .strict()
             .required()
-            .typeError("Apenas texto."),
+            .typeError("born"),
         death: yup
-            .string()
+            .string(null)
             .strict()
-            .typeError("Apenas texto."),
+            .nullable()
+            .typeError("death"),
         instrument: yup
             .string()
             .strict()
             .required()
-            .typeError("Apenas texto."),
+            .typeError("instrument"),
         secondInstrument: yup
-            .string()
+            .string(null)
             .strict()
-            .typeError("Apenas texto."),
+            .nullable()
+            .typeError("secondInstrument"),
         otherInstrument: yup
-            .string()
+            .string(null)
             .strict()
-            .typeError("Apenas texto."),
+            .nullable()
+            .typeError("otherInstrument"),
         songwriter: yup
             .boolean()
             .strict()
             .required()
-            .typeError("Responda apenas com \"true\" ou \"false\"."),
+            .typeError("songwriter"),
         producer: yup
             .boolean()
             .strict()
             .required()
-            .typeError("Responda apenas com \"true\" ou \"false\"."),
+            .typeError("producer"),
     })
 
     await schema.validate(req.body).catch(error => {
         return res.status(400).json({
-            message: error.errors
+            erro: error.errors
         })
     })
 
