@@ -33,9 +33,13 @@ routes.post("/artists",
 routes.get("/artists", (req, res) =>
     listArtistsController.listAll(req, res)
 );
+routes.get("/artists/:instrument", (req, res) =>
+    listArtistsController.listByInstrument(req, res)
+)
 routes.put("/artists/:id",
-    PrimaryKeyValidator, ArtistsValidator, (req, res) =>
-    updateArtistController.update(req, res)
+    PrimaryKeyValidator, ArtistsValidator,
+    (req, res) =>
+        updateArtistController.update(req, res)
 );
 routes.delete("/artists/:id",
     PrimaryKeyValidator, (req, res) =>
