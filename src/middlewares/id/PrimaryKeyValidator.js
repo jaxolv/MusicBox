@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-async function IndexValidator(req, res, next) {
+async function PrimaryKeyValidator(req, res, next) {
     const schema = yup.object().shape({
         id: yup
             .string()
@@ -16,7 +16,7 @@ async function IndexValidator(req, res, next) {
         })
     })
 
-    next()
+    next();
 }
 
-export default IndexValidator;
+export default PrimaryKeyValidator;

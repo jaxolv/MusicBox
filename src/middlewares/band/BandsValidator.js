@@ -16,6 +16,7 @@ async function BandsValidator(req, res, next) {
         end: yup
             .number()
             .strict()
+            .nullable()
             .typeError("Digite apenas números.")
     })
 
