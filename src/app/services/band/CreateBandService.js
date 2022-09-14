@@ -10,9 +10,11 @@ export default class CreateBandService {
         end
     ) {
         try {
+            const nameBand = name.toLowerCase();
+
             const band = await BandModel.create({
                 id: v4(),
-                name,
+                name: nameBand,
                 foundation,
                 end
             })

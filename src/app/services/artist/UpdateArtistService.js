@@ -15,20 +15,21 @@ export default class UpdateArtistService {
         producer
     ) {
         try {
+            const nameLC = name.toLowerCase();
+            const otherInstrumentLC = otherInstrument.toLowerCase();
+            
             const artist = await ArtistModel.findByPk(id);
 
-            if (!artist) {
-                return { message: "Artist not found." };
-            }
+            if (!artist) { return { message: "Artist not found." } };
 
             const [numberRegisters] = await ArtistModel.update(
                 {
-                    name,
+                    name: nameLC,
                     born,
                     death,
                     instrument,
                     secondInstrument,
-                    otherInstrument,
+                    otherInstrument: otherInstrumentLC,
                     songwriter,
                     producer
                 },

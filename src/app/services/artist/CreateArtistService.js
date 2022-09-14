@@ -15,14 +15,17 @@ export default class CreateArtistService {
         producer
     ) {
         try {
+            const nameArtist = name.toLowerCase();
+            const otherInstrumentArtist = otherInstrument.toLowerCase();
+
             const artist = await ArtistModel.create({
                 id: v4(),
-                name,
+                name: nameArtist,
                 born,
                 death,
                 instrument,
                 secondInstrument,
-                otherInstrument,
+                otherInstrument: otherInstrumentArtist,
                 songwriter,
                 producer
             })
