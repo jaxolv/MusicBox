@@ -2,6 +2,7 @@ import Router from "express";
 
 // validator:
 import PrimaryKeyValidator from "../../middlewares/id/PrimaryKeyValidator";
+import ForeignKeyValidator from "../../middlewares/id/ForeignKeyValidator";
 
 // controllers:
 import CreateMemberController from "../../app/controllers/members/CreateMemberController";
@@ -18,16 +19,19 @@ const deleteMemberController = new DeleteMemberController();
 const updateMemberController = new UpdateMemberController();
 
 // CRUD:
-routes.post("/members", (req, res) =>
+routes.post("/members",
+    ForeignKeyValidator, (req, res) =>
     createMemberController.create(req, res)
 );
 routes.get("/members", (req, res) =>
     listMembersController.listByBand(req, res)
 );
-routes.delete("/members/:id", (req, res) =>
+routes.delete("/members/:id",
+    PrimaryKeyValidator, (req, res) =>
     deleteMemberController.delete(req, res)
 );
-routes.put("/members/:id", (req, res) =>
+routes.put("/members/:id",
+    PrimaryKeyValidator, ForeignKeyValidator, (req, res) =>
     updateMemberController.update(req, res)
 );
 

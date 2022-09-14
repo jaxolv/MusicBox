@@ -5,7 +5,7 @@ export default class ListMembersService {
     async listMemberByName(band_name) {
         try {
             const band = await BandModel.findOne({
-                where: { name: band_name }
+                where: { name: band_name.toLowerCase() }
             })
 
             const members = await MembersModel.findAll({
