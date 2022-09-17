@@ -2,7 +2,7 @@ import { v4 } from "uuid";
 import ArtistModel from "../../models/artist/ArtistModel";
 
 export default class CreateArtistService {
-    constructor() {}
+    constructor() { }
 
     async newArtist(
         name,
@@ -15,22 +15,35 @@ export default class CreateArtistService {
         producer
     ) {
         try {
-            const nameArtist = name.toLowerCase();
-            const otherInstrumentArtist = otherInstrument.toLowerCase();
+            const nameLC = name.toLowerCase();
 
-            const artist = await ArtistModel.create({
-                id: v4(),
-                name: nameArtist,
-                born,
-                death,
-                instrument,
-                secondInstrument,
-                otherInstrument: otherInstrumentArtist,
-                songwriter,
-                producer
-            })
+            if (otherInstrument) {
+                const otherInstrumentLC = otherInstrument.toLowerCase(0);
 
-            return artist
+                return await ArtistModel.create({
+                    id: v4(),
+                    name: nameLC,
+                    born,
+                    death,
+                    instrument,
+                    secondInstrument,
+                    otherInstrument: otherInstrumentLC,
+                    songwriter,
+                    producer
+                })
+            } else {
+                return await ArtistModel.create({
+                    id: v4(),
+                    name: nameLC,
+                    born,
+                    death,
+                    instrument,
+                    secondInstrument,
+                    otherInstrument,
+                    songwriter,
+                    producer
+                })
+            }
         } catch (error) {
             console.log(error)
             return { erro: error.message }

@@ -14,7 +14,7 @@ async function ArtistsValidator(req, res, next) {
             .required()
             .typeError("born"),
         death: yup
-            .string(null)
+            .string()
             .strict()
             .nullable()
             .typeError("death"),
@@ -24,12 +24,12 @@ async function ArtistsValidator(req, res, next) {
             .required()
             .typeError("instrument"),
         secondInstrument: yup
-            .string(null)
+            .string()
             .strict()
             .nullable()
             .typeError("secondInstrument"),
         otherInstrument: yup
-            .string(null)
+            .string()
             .strict()
             .nullable()
             .typeError("otherInstrument"),
