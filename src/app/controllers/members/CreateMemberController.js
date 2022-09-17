@@ -14,6 +14,6 @@ export default class CreateMemberController {
             artist_id
         )
 
-        return res.json(member)
+        return res.status(201).json(member)
     }
 }

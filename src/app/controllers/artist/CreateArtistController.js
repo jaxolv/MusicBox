@@ -24,6 +24,6 @@ export default class CreateArtistController {
             producer
         )
 
-        return res.json(artist)
+        return res.status(201).json(artist)
     }
 }

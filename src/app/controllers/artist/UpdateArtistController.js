@@ -28,6 +28,6 @@ export default class UpdateArtistController {
             producer
         )
 
-        return res.status(200).json(resulte)
+        return res.json(resulte)
     }
 }

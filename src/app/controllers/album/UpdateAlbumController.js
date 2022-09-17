@@ -20,6 +20,6 @@ export default class UpdateAlbumController {
             band_id
         )
 
-        return res.status(200).json(resulte)
+        return res.json(resulte)
     }
 }

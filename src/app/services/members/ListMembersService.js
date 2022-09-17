@@ -8,11 +8,13 @@ export default class ListMembersService {
                 where: { name: band_name.toLowerCase() }
             })
 
+            if (!band) { return { message: "Band not found." } }
+
             const members = await MembersModel.findAll({
                 where: { band_id: band.id }
             })
 
-                return members
+            return members
         } catch (error) {
             console.log(error)
             return { erro: error.message }

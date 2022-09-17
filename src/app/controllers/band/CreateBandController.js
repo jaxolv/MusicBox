@@ -12,6 +12,6 @@ export default class CreateBandController {
             end
         )
 
-        return res.json(band)
+        return res.status(201).json(band)
     }
 }

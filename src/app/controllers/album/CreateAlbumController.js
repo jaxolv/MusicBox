@@ -18,6 +18,6 @@ export default class CreateAlbumController {
             band_id
         )
 
-        return res.json(artist)
+        return res.status(201).json(artist)
     }
 }
