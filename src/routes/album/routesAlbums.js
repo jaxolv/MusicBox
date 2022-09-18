@@ -22,11 +22,11 @@ const deleteAlbumController = new DeleteAlbumController();
 routes.post("/albums", (req, res) =>
     createAlbumController.create(req, res)
 );
+routes.get("/albums", (req, res) =>
+    listAlbumsController.listAll(req, res)
+);
 routes.get("/albums/:id", (req, res) =>
     listAlbumsController.listByIdBand(req, res)
-);
-routes.get("/albums", (req, res) =>
-    listAlbumsController.listByNameBand(req, res)
 );
 routes.put("/albums/:id", (req, res) =>
     updateAlbumController.update(req, res)

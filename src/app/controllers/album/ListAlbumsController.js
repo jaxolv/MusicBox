@@ -8,13 +8,13 @@ export default class ListAlbumsController {
 
         const list = await this.service.listAlbumsByBand(id);
 
+        if (list.message) { return res.status(204).json(list)}
+
         return res.json(list)
     }
 
-    async listByNameBand(req, res) {
-        const { name } = req.query
-
-        const list = await this.service.listAlbumsByNameOfTheBand(name);
+    async listAll(req, res) {
+        const list = await this.service.listAllAlbums();
 
         return res.json(list)
     }

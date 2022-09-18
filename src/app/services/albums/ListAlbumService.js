@@ -10,6 +10,8 @@ export default class ListArtistsService {
                 where: { band_id: bandId }
             })
 
+            if (list.length === 0) { return { message: "empty" } }
+
             return list
         } catch (error) {
             console.log(error)
@@ -17,17 +19,11 @@ export default class ListArtistsService {
         }
     }
 
-    async listAlbumsByNameOfTheBand(band_name) {
+    async listAllAlbums(band_name) {
         try {
-            const band = await BandModel.findAll({
-                where: { name: band_name.toLowerCase() }
-            })
+            const list = await AlbumModel.findAll()
 
-            const list = await AlbumModel.findAll({
-                where: { id: band.id }
-            })
-
-            return { band: band.name, albums: list }
+            return list
         } catch (error) {
             console.log(error)
             return { erro: error.message }
