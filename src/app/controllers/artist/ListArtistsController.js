@@ -6,7 +6,7 @@ export default class ListArtistsController {
     async listAll(req, res) {
         const list = await this.service.listArtists();
 
-        return res.json(list)
+        return res.json({ length: list.length, artists: list })
     }
 
     async listByInstrument(req, res) {

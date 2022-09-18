@@ -8,7 +8,7 @@ export default class ListAlbumsController {
 
         const list = await this.service.listAlbumsByBand(id);
 
-        if (list.message) { return res.status(204).json(list)}
+        if (list.message) { return res.status(200).json(list)}
 
         return res.json(list)
     }
