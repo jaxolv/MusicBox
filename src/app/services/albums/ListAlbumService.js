@@ -10,7 +10,7 @@ export default class ListArtistsService {
                 where: { band_id: bandId }
             })
 
-            if (list.length === 0) { return { message: "empty" } }
+            if (list.length === 0) { return { message: "ID not related to any band." } }
 
             return list
         } catch (error) {
