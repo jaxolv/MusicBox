@@ -11,9 +11,9 @@ export default class DeleteSongService {
                 return { message: "Song not found." };
             }
 
-            const erasedSong = await song.destroy();
+            await song.destroy();
 
-            return erasedSong
+            return {message: `Song \"${song.title}\" deleted successfully.`}
         } catch (error) {
             console.log(error)
             return { erro: error.message }

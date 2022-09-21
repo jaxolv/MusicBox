@@ -17,7 +17,7 @@ export default class CreateArtistService {
         try {
             const nameLC = name.toLowerCase();
 
-            if (otherInstrument) {
+            if (instrument === "other" || otherInstrument) {
                 const otherInstrumentLC = otherInstrument.toLowerCase(0);
 
                 return await ArtistModel.create({

@@ -16,7 +16,6 @@ export default class UpdateArtistService {
     ) {
         try {
             const nameLC = name.toLowerCase();
-            const otherInstrumentLC = otherInstrument;
             
             const artist = await ArtistModel.findByPk(id);
 

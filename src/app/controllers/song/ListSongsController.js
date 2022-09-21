@@ -1,7 +1,7 @@
-import ListAlbumService from "../../services/albums/ListAlbumService";
+import ListSongsService from "../../services/songs/ListSongsService";
 
 export default class ListAlbumsController {
-    constructor() { this.service = new ListAlbumService(); }
+    constructor() { this.service = new ListSongsService(); }
 
     async listByIdAlbum(req, res) {
         const { id } = req.params
@@ -13,6 +13,10 @@ export default class ListAlbumsController {
 
     async listAll(req, res) {
         const list = await this.service.listAllSongs();
+
+        if (list.length === 0) {
+            return res.status(204).json(list)
+        }
 
         return res.json(list)
     }

@@ -1,29 +1,28 @@
-import AlbumModel from "../../models/album/AlbumModel";
+import SongModel from "../../models/song/SongModel"
 
-export default class UpdateArtistService {
-    constructor() { }
+export default class UpdateSongService {
+    constructor() {}
 
-    async updateAlbum(
+    async updateSong(
         id,
         title,
-        release,
-        genre,
-        band_id
+        subtitle,
+        track,
+        album_id
     ) {
         try {
-            const titleLC = title.toLowerCase();
-            const genreLC = genre.toLowerCase();
+            const song = await SongModel.findByPk(id);
+            
+            if (!subtitle) { subtitle = undefined } else { subtitle = subtitle.toLowerCase() };
 
-            const album = await AlbumModel.findByPk(id);
+            if (!song) { return { message: "Song not found." } };
 
-            if (!album) { return { message: "Album not found." } };
-
-            const [numberRegisters] = await AlbumModel.update(
+            const [numberRegisters] = await SongModel.update(
                 {
-                    title: titleLC,
-                    release,
-                    genre: genreLC,
-                    band_id
+                    title: title.toLowerCase(),
+                    subtitle,
+                    track,
+                    album_id
                 },
                 {
                     where: { id }
@@ -34,11 +33,10 @@ export default class UpdateArtistService {
                 return { message: "Same data" }
             } else {
                 return {
-                    id,
                     title,
-                    release,
-                    genre,
-                    band_id
+                    subtitle,
+                    track,
+                    album_id
                 }
             }
         } catch (error) {

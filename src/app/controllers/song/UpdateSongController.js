@@ -1,23 +1,23 @@
-import UpdateAlbumService from "../../services/albums/UpdateAlbumService";
+import UpdateSongService from "../../services/songs/UpdateSongService";
 
 export default class UpdateAlbumController {
-    constructor() { this.service = new UpdateAlbumService() }
+    constructor() { this.service = new UpdateSongService() }
 
     async update(req, res) {
         const { id } = req.params
         const {
             title,
-            release,
-            genre,
-            band_id
+            subtitle,
+            track,
+            album_id
         } = req.body
 
-        const resulte = await this.service.updateAlbum(
+        const resulte = await this.service.updateSong(
             id,
             title,
-            release,
-            genre,
-            band_id
+            subtitle,
+            track,
+            album_id
         )
 
         return res.json(resulte)
