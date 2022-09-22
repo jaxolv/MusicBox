@@ -5,8 +5,6 @@ export default class UpdateArtistService {
 
     async updateBand(id, name, foundation, end) {
         try {
-            const nameLC = name.toLowerCase();
-
             const band = await BandModel.findByPk(id);
 
             if (!band) {
@@ -14,7 +12,7 @@ export default class UpdateArtistService {
             }
 
             const [numberRegisters] = await BandModel.update(
-                { name: nameLC, foundation, end }, { where: { id } }
+                { name: name.toLowerCase(), foundation, end }, { where: { id } }
             );
 
             if (numberRegisters === 0) {

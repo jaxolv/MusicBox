@@ -11,14 +11,11 @@ export default class CreateAlbumService {
         band_id
     ) {
         try {
-            const titleLC = title.toLowerCase();
-            const genreLC = genre.toLowerCase();
-
             const album = await AlbumModel.create({
                 id: v4(),
-                title: titleLC,
+                title: title.toLowerCase(),
                 release,
-                genre: genreLC,
+                genre: genre.toLowerCase(),
                 band_id
             })
 

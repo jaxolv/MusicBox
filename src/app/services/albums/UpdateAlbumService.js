@@ -11,18 +11,15 @@ export default class UpdateArtistService {
         band_id
     ) {
         try {
-            const titleLC = title.toLowerCase();
-            const genreLC = genre.toLowerCase();
-
             const album = await AlbumModel.findByPk(id);
 
             if (!album) { return { message: "Album not found." } };
 
             const [numberRegisters] = await AlbumModel.update(
                 {
-                    title: titleLC,
+                    title: title.toLowerCase(),
                     release,
-                    genre: genreLC,
+                    genre: genre.toLowerCase(),
                     band_id
                 },
                 {
