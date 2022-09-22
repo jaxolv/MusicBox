@@ -8,6 +8,7 @@ export default class CreateSongController {
             title,
             subtitle,
             track,
+            duration,
             album_id
         } = req.body
 
@@ -15,6 +16,7 @@ export default class CreateSongController {
             title,
             subtitle,
             track,
+            duration,
             album_id
         )
 

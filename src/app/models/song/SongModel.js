@@ -15,6 +15,7 @@ SongModel.init(
         title: DataTypes.STRING,
         subtitle: DataTypes.STRING,
         track: DataTypes.INTEGER,
+        duration: DataTypes.TIME,
         album_id: {
             type: DataTypes.UUIDV4(),
             references: {

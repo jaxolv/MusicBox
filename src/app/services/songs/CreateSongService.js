@@ -5,7 +5,7 @@ import SongModel from "../../models/song/SongModel";
 export default class CreateSongService {
     constructor() { }
 
-    async newSong(title, subtitle, track, album_id) {
+    async newSong(title, subtitle, track, duration, album_id) {
         try {
             if (subtitle) { subtitle = subtitle.toLowerCase() } else { subtitle = undefined }
 
@@ -16,6 +16,7 @@ export default class CreateSongService {
                 title: title.toLowerCase(),
                 subtitle,
                 track,
+                duration,
                 album_id
             })
 

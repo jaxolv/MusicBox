@@ -1,19 +1,20 @@
 import SongModel from "../../models/song/SongModel"
 
 export default class UpdateSongService {
-    constructor() {}
+    constructor() { }
 
     async updateSong(
         id,
         title,
         subtitle,
         track,
+        duration,
         album_id
     ) {
         try {
             const song = await SongModel.findByPk(id);
-            
-            if (!subtitle) { subtitle = undefined } else { subtitle = subtitle.toLowerCase() };
+
+            if (subtitle) { subtitle = subtitle.toLowerCase() } else { subtitle = undefined };
 
             if (!song) { return { message: "Song not found." } };
 
@@ -22,6 +23,7 @@ export default class UpdateSongService {
                     title: title.toLowerCase(),
                     subtitle,
                     track,
+                    duration,
                     album_id
                 },
                 {
@@ -36,6 +38,7 @@ export default class UpdateSongService {
                     title,
                     subtitle,
                     track,
+                    duration,
                     album_id
                 }
             }

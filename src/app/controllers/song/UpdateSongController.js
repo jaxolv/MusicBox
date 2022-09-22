@@ -9,6 +9,7 @@ export default class UpdateAlbumController {
             title,
             subtitle,
             track,
+            duration,
             album_id
         } = req.body
 
@@ -17,6 +18,7 @@ export default class UpdateAlbumController {
             title,
             subtitle,
             track,
+            duration,
             album_id
         )
 
