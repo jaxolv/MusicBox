@@ -3,7 +3,7 @@ import AlbumModel from "../../models/album/AlbumModel";
 import BandModel from "../../models/band/BandModel";
 
 export default class ListSongsService {
-    constructor() { }
+    constructor() {}
 
     async listSongsByAlbum(albumId) {
         try {
@@ -18,10 +18,16 @@ export default class ListSongsService {
             })
 
             const band = await BandModel.findOne({
-                where: {id: album.band_id}
+                where: { id: album.band_id }
             })
 
-            return { album: album.title, artist: band.name, release: album.release, tracks: tracklist.length, tracklist: tracklist }
+            return {
+                album: album.title,
+                artist: band.name,
+                release: album.release,
+                tracks: tracklist.length,
+                tracklist: tracklist.sort((A, B) => A.track - B.track)
+            }
         } catch (error) {
             console.log(error)
             return { erro: error.message }
