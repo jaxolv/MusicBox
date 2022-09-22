@@ -16,6 +16,7 @@ import CreateSongController from "../../app/controllers/song/CreateSongControlle
 import DeleteSongController from "../../app/controllers/song/DeleteSongController";
 import ListSongsController from "../../app/controllers/song/ListSongsController";
 import UpdateSongController from "../../app/controllers/song/UpdateSongController";
+import UpdateDurationController from "../../app/controllers/song/UpdateDurationController"
 
 const routes = new Router();
 
@@ -24,6 +25,7 @@ const createSongController = new CreateSongController();
 const deleteSongController = new DeleteSongController();
 const listSongsController = new ListSongsController();
 const updateSongController = new UpdateSongController();
+const updateDurationController = new UpdateDurationController();
 
 // CRUD:
 routes.post("/songs", (req, res) =>
@@ -40,6 +42,9 @@ routes.put("/songs/:id", (req, res) =>
 );
 routes.delete("/songs/:id", (req, res) =>
     deleteSongController.delete(req, res)
+);
+routes.patch("/songs/:id", (req, res) =>
+    updateDurationController.update(req, res)
 );
 
 routes.post("/uploads", uploadFile.single("file"), (req, res) =>
