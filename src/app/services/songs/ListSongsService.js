@@ -4,7 +4,7 @@ import BandModel from "../../models/band/BandModel";
 import timeConversor from "../../controllers/utils/timeConversor"
 
 export default class ListSongsService {
-    constructor() {}
+    constructor() { }
 
     async listSongsByAlbum(albumId) {
         try {
@@ -12,7 +12,11 @@ export default class ListSongsService {
 
             if (tracklist.length === 0) { return { message: "ID not related to any album." } }
 
-            const albumDuration = (tracklist.map((song) => { return timeConversor(song.duration) })).reduce((A, B) => A + B)
+            let albumDuration = 0
+
+            for (let i = 0; i < tracklist.length; i++) {
+                albumDuration = albumDuration + timeConversor(tracklist[i].duration)
+            }
 
             const album = await AlbumModel.findOne({ where: { id: albumId } })
 
