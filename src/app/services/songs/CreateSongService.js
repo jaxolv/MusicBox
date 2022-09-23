@@ -3,7 +3,7 @@ import AlbumModel from "../../models/album/AlbumModel";
 import SongModel from "../../models/song/SongModel";
 
 export default class CreateSongService {
-    constructor() { }
+    constructor() {}
 
     async newSong(title, subtitle, track, duration, album_id) {
         try {
