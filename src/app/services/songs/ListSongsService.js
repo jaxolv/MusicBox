@@ -4,7 +4,7 @@ import BandModel from "../../models/band/BandModel";
 import timeConversor from "../../controllers/utils/timeConversor"
 
 export default class ListSongsService {
-    constructor() {}
+    constructor() { }
 
     async listSongsByAlbum(albumId) {
         try {
