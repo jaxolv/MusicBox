@@ -6,6 +6,7 @@ import routesBands from "./routes/band/routesBands";
 import routesMembers from "./routes/members/routesMembers";
 import routesAlbums from "./routes/album/routesAlbums";
 import routesSongs from "./routes/song/routesSongs"
+import routesSongwriters from "./routes/songwriters/routesSongwriters";
 
 class App {
     constructor() {
@@ -26,6 +27,7 @@ class App {
         this.server.use(routesMembers);
         this.server.use(routesAlbums);
         this.server.use(routesSongs);
+        this.server.use(routesSongwriters);
     }
 
     async intializeDatabase() {
