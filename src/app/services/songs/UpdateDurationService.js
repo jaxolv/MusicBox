@@ -1,3 +1,4 @@
+import { timeValidator } from "../../controllers/utils/timeConversor";
 import SongModel from "../../models/song/SongModel"
 
 export default class UpdateDurationSongService {
@@ -10,7 +11,7 @@ export default class UpdateDurationSongService {
             if (!song) { return { message: "Song not found." } };
 
             const [numberRegisters] = await SongModel.update(
-                { duration }, { where: { id } }
+                { duration: timeValidator(duration) }, { where: { id } }
             );
 
             if (numberRegisters === 0) {

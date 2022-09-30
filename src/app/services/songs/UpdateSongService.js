@@ -1,4 +1,5 @@
-import SongModel from "../../models/song/SongModel"
+import SongModel from "../../models/song/SongModel";
+import { timeValidator } from "../../controllers/utils/timeConversor";
 
 export default class UpdateSongService {
     constructor() { }
@@ -23,7 +24,7 @@ export default class UpdateSongService {
                     title: title.toLowerCase(),
                     subtitle,
                     track,
-                    duration,
+                    duration: timeValidator(duration),
                     album_id
                 },
                 {

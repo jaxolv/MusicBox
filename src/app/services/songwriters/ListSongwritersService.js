@@ -36,7 +36,7 @@ export default class ListSongwritersService {
                 songwriters: songwriters.map((writer) => {
                     const search = artists.find((artist) => artist.id === writer.artist_id)
 
-                    return { id: search.id, name: search.name }
+                    return { name: search.name, artist_id: search.id }
                 })
             }
         } catch (error) {
