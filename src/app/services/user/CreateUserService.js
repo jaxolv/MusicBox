@@ -1,6 +1,6 @@
 import { v4 } from "uuid";
-import crypto from "node:crypto"
 import UsersModel from "../../models/user/UsersModel";
+import { hashPassword } from "../../utils/HashPassword";
 
 export default class CreateArtistService {
     constructor() { }
@@ -15,16 +15,12 @@ export default class CreateArtistService {
         zipCode,
         verifyed
     ) {
-        const hashedPassword = crypto
-            .pbkdf2Sync(password, process.env.PASSWORD_SALT, 10000, 64, 'sha512')
-            .toString('hex');
-
         try {
             const user = await UsersModel.create({
                 id: v4(),
                 name: name.toLowerCase(),
                 username: username.toLowerCase(),
-                password: hashedPassword,
+                password: hashPassword(password, process.env.PASSWORD_SALT),
                 email: email.toLowerCase(),
                 born,
                 country: country.toUpperCase(),

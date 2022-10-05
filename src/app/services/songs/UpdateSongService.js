@@ -1,5 +1,5 @@
 import SongModel from "../../models/song/SongModel";
-import { timeValidator } from "../../controllers/utils/timeConversor";
+import { timeValidator } from "../../utils/timeConversor";
 
 export default class UpdateSongService {
     constructor() { }

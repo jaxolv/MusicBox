@@ -1,7 +1,7 @@
 import SongModel from "../../models/song/SongModel";
 import AlbumModel from "../../models/album/AlbumModel";
 import BandModel from "../../models/band/BandModel";
-import { timeConversor } from "../../controllers/utils/timeConversor"
+import { timeConversor } from "../../utils/timeConversor"
 
 export default class ListSongsService {
     constructor() {}

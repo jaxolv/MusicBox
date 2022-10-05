@@ -1,7 +1,7 @@
 import { v4 } from "uuid";
 import AlbumModel from "../../models/album/AlbumModel";
 import SongModel from "../../models/song/SongModel";
-import { timeValidator } from "../../controllers/utils/timeConversor";
+import { timeValidator } from "../../utils/timeConversor";
 
 export default class CreateSongService {
     constructor() {}

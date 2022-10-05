@@ -1,4 +1,4 @@
-import { timeValidator } from "../../controllers/utils/timeConversor";
+import { timeValidator } from "../../utils/timeConversor";
 import SongModel from "../../models/song/SongModel"
 
 export default class UpdateDurationSongService {

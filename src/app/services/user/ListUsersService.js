@@ -1,4 +1,3 @@
-import { json } from "sequelize";
 import UsersModel from "../../models/user/UsersModel";
 
 export default class ListUsersService {
@@ -15,10 +14,16 @@ export default class ListUsersService {
         }
     }
 
-    async listOne(email, password) {
-        const user = await UsersModel.listOne({
+    async listOne(email) {
+        const user = await UsersModel.findOne({
             where: { email }
         })
+
+        return user
+    }
+
+    async listOneById(id) {
+        const user = await UsersModel.findByPk(id)
 
         return user
     }
