@@ -25,7 +25,7 @@ export default async function validateSessionToken(req, res, next) {
             return res.status(401).json({error: "User not found!"})
         }
     } catch (err) {
-        return response.status(401).json({ error: err.message })
+        return res.status(401).json({ error: err.message })
     }
 
     next()

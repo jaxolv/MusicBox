@@ -1,0 +1,2582 @@
+{
+	"info": {
+		"_postman_id": "2e57d27b-2358-45fd-b299-176e94bd2e6b",
+		"name": "MusicBox",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23352447"
+	},
+	"item": [
+		{
+			"name": "Session",
+			"item": [
+				{
+					"name": "User login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer undefined"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"jackson@digitalhouse.com\",\r\n    \"password\": \"depoiseudigo\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "{{URL}}/session",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"session"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "not found / 404",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer undefined"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/session",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"session"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Security-Policy",
+									"value": "default-src 'none'"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "147"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 15:34:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "text/html; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create an user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Iolanda Alves de Oliveira\",\r\n    \"username\": \"iolyolv\",\r\n    \"password\": \"depoiseudigo\",\r\n    \"email\": \"iolanda@digitalhouse.com\",\r\n    \"born\": \"1958-03-31\",\r\n    \"country\": \"BRA\",\r\n    \"zipCode\": \"59655000\",\r\n    \"verifyed\": true\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/users",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-PXDbbzOxOeuUmjE5yTrPjFykRDc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 14:38:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/users",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "432"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b0-aIIr0ME5lgPiVvrYEDho7YoZ+mc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 14:39:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update an user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/users/a7797bcc-5931-46d5-a300-e9b47243b57e",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"a7797bcc-5931-46d5-a300-e9b47243b57e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/users/a7797bcc-5931-46d5-a300-e9b47243b57e",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"users",
+										"a7797bcc-5931-46d5-a300-e9b47243b57e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "228"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e4-awQAm8D58Fp5GjcOTlvqXJWsBZg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 02 Oct 2022 20:10:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete an user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/users/7a4d56fc-3fbb-4d01-b859-ef77bc209d9a",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"users",
+								"7a4d56fc-3fbb-4d01-b859-ef77bc209d9a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/users/d1f3d516-a86c-4258-8c1b-e7c664b2f86e",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"users",
+										"d1f3d516-a86c-4258-8c1b-e7c664b2f86e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "430"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ae-sUQp62ceIeO0nqnO2GVkNZSX9/M\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Oct 2022 14:39:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Artists",
+			"item": [
+				{
+					"name": "Create an artist",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/artists",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/artists",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"artists"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-E3i195+iVVKLUSlqPH4rknDaD6Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Sep 2022 14:36:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List all artists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artists",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artists"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/artists",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"artists"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2547"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9f3-UhN2scDc+oBCjtNkr/byHrSHM5I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 16:09:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List artist by instrument",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artists/bass",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artists",
+								"bass"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/artists/guitar",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"artists",
+										"guitar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "642"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"282-qiAY8jF9cna5KMezu4RZDFfNes8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:28:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update an artist",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/artists/52112410-c0a8-4aef-bc50-632f7bcb7fab",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artists",
+								"52112410-c0a8-4aef-bc50-632f7bcb7fab"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/artists/52112410-c0a8-4aef-bc50-632f7bcb7fab",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"artists",
+										"52112410-c0a8-4aef-bc50-632f7bcb7fab"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a8-4OfBxQRUnWWkhRFy03kH0Q7uwi4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Sep 2022 14:53:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete an artist",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/artists/a736784e-5f4c-44aa-8582-657e0ed80037",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"artists",
+								"a736784e-5f4c-44aa-8582-657e0ed80037"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/artists/a736784e-5f4c-44aa-8582-657e0ed80037",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"artists",
+										"a736784e-5f4c-44aa-8582-657e0ed80037"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "212"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d4-Z5mIZm27V2R2cVqxxvI4gk3vV2o\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Sep 2022 21:34:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Bands",
+			"item": [
+				{
+					"name": "Create a band",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/bands",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bands"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/bands",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"bands"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-eSksDqLgLSQ8GJVY8HcaNWD08dE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Sep 2022 14:28:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List all bands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/bands",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bands"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/bands",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"bands"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "289"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"121-DnHKDGs9XtltZCP7EGsz7Rhb9us\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:28:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update a band",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/bands/bd1ecf38-6145-490b-8b78-5bba3c9b7fff",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bands",
+								"bd1ecf38-6145-490b-8b78-5bba3c9b7fff"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/bands/bd1ecf38-6145-490b-8b78-5bba3c9b7fff",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"bands",
+										"bd1ecf38-6145-490b-8b78-5bba3c9b7fff"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"58-euiGMC5NkMgbLYhSXyyiGRd8BS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 15:45:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete a band",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/bands/ea58114e-513f-4fce-8dd5-bd1eedef661d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"bands",
+								"ea58114e-513f-4fce-8dd5-bd1eedef661d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/bands/ea58114e-513f-4fce-8dd5-bd1eedef661d",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"bands",
+										"ea58114e-513f-4fce-8dd5-bd1eedef661d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "95"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5f-uJIWoJyQKqpvidE9jodN/xTOVFE\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 23:08:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Members",
+			"item": [
+				{
+					"name": "Create a member",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"stillMember\": false,\r\n    \"band_id\": \"1a0e696f-4cb1-4be2-9bff-3fcc18c03bda\",\r\n    \"artist_id\": \"52112410-c0a8-4aef-bc50-632f7bcb7fab\"\r\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/members",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"members"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/members",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a5-A1dBE2FBp+q/YK3zTynmD2yypfw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 22 Sep 2022 15:05:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List all members of a band",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "name",
+								"value": "TOOL"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/members?name=pink floyd",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"members"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "pink floyd",
+									"description": "Put a band's name at the 'name' query to find all members associated at it."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "name",
+										"value": "TOOL"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/members",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"members"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "818"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"332-cIjLBMMbB69104gXgPF2k/j0biM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:17:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update a member",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/members/99ffb38c-a6ff-4e10-a974-593180b405b7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"members",
+								"99ffb38c-a6ff-4e10-a974-593180b405b7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/members/99ffb38c-a6ff-4e10-a974-593180b405b7",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"members",
+										"99ffb38c-a6ff-4e10-a974-593180b405b7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-a0wPvzX1hiyWobQrJWA1nOdYG1Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 14 Sep 2022 02:15:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete a member",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/members/e7cf9327-20d9-4f27-9946-1fad52f756cc",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"members",
+								"e7cf9327-20d9-4f27-9946-1fad52f756cc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/members/e7cf9327-20d9-4f27-9946-1fad52f756cc",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"members",
+										"e7cf9327-20d9-4f27-9946-1fad52f756cc"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "195"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c3-BEdl/6mkxqta0pYWa2znjF1STts\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 13 Sep 2022 23:08:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Songs",
+			"item": [
+				{
+					"name": "Create a song",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/songs'",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songs'"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songs",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songs"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "240"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f0-+NBuZz1LfSHA/3jw48PkpTmGtco\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 01:55:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List songs from an album",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "name",
+								"value": "TOOL"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songs/81bda4c0-b523-444b-a559-dbcf0df53f79",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songs",
+								"81bda4c0-b523-444b-a559-dbcf0df53f79"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "name",
+										"value": "TOOL"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songs/81bda4c0-b523-444b-a559-dbcf0df53f79",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songs",
+										"81bda4c0-b523-444b-a559-dbcf0df53f79"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1095"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"447-QQkatScLsUJsT+nQo4KOYdX0ymI\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 02:14:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update a song",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songs",
+								"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songs",
+										"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-jz6hee/u62vFjv8SVso+FPySW3k\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 02:14:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update the duration of a song",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songs",
+								"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songs",
+										"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "142"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8e-29zuWGT2R3LB1oJLM2VXUS3Ef+E\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 02:12:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete a song",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songs",
+								"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/songs/5bd900c3-0700-4767-a085-12b9d5bf82e6",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songs",
+										"5bd900c3-0700-4767-a085-12b9d5bf82e6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-z9GxnY0pEgxsl75VLiRA4S3x4gg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 Sep 2022 02:14:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Albums",
+			"item": [
+				{
+					"name": "Create an album",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/albums",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/albums",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"albums"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "161"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a1-r91RRjBZDyi/3qm/LfqDwFrLQCQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 13:51:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List all albums",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "name",
+								"value": "TOOL"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/albums",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"albums"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "name",
+										"value": "TOOL"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/albums",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"albums"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "891"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37b-Q8qMM1CWQ0IGC9CRLemSUZS1OSE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Sep 2022 15:24:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "List albums by id of the band",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/albums/1a0e696f-4cb1-4be2-9bff-3fcc18c03bda",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"albums",
+								"1a0e696f-4cb1-4be2-9bff-3fcc18c03bda"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/albums/1a0e696f-4cb1-4be2-9bff-3fcc18c03bda",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"albums",
+										"1a0e696f-4cb1-4be2-9bff-3fcc18c03bda"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "542"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"21e-0RG2U29kOHrE/0ZbYN7i774L66s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:29:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Update an album",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/albums/03ac5712-96dd-4b2c-aa63-bcaffc4eff5d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"albums",
+								"03ac5712-96dd-4b2c-aa63-bcaffc4eff5d"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/albums/03ac5712-96dd-4b2c-aa63-bcaffc4eff5d",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"albums",
+										"03ac5712-96dd-4b2c-aa63-bcaffc4eff5d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "166"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-VIk8Xfg1/YBI1ljLcgm2eBcolac\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 18 Sep 2022 00:32:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "Delete an album",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/albums/7a3db97a-0be8-4728-a995-72b954841e2b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"albums",
+								"7a3db97a-0be8-4728-a995-72b954841e2b"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/albums/7a3db97a-0be8-4728-a995-72b954841e2b",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"albums",
+										"7a3db97a-0be8-4728-a995-72b954841e2b"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "165"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a5-Qx+m8rLRbhsD+jhh2tiLsHwLT7M\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 Sep 2022 21:42:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Songwriters",
+			"item": [
+				{
+					"name": "localhost:8080/songwriters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songwriters",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songwriters"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "created / 201",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songwriters",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songwriters"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "145"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"91-5l28HAoo0IH59amdlQqW1vHhz7Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:01:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/songwriters/f8857599-8229-40e6-b4a7-d9736285e872",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "name",
+								"value": "TOOL"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songwriters/f8857599-8229-40e6-b4a7-d9736285e872",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songwriters",
+								"f8857599-8229-40e6-b4a7-d9736285e872"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "name",
+										"value": "TOOL"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songwriters/f8857599-8229-40e6-b4a7-d9736285e872",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songwriters",
+										"f8857599-8229-40e6-b4a7-d9736285e872"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "352"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"160-Wml5BJ6TRpRy6w03qyZZe5y4Z0U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:31:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songwriters",
+								"15df5f3f-a3ef-4f38-add5-c324f65b0dc7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL1}}/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songwriters",
+										"15df5f3f-a3ef-4f38-add5-c324f65b0dc7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-8pmwNRdX8N7ti7KinS5EMlfkoX8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:01:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				},
+				{
+					"name": "localhost:8080/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"songwriters",
+								"15df5f3f-a3ef-4f38-add5-c324f65b0dc7"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "successfully / 200",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL1}}/songwriters/15df5f3f-a3ef-4f38-add5-c324f65b0dc7",
+									"host": [
+										"{{baseURL1}}"
+									],
+									"path": [
+										"songwriters",
+										"15df5f3f-a3ef-4f38-add5-c324f65b0dc7"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"af-+90xFkZq9XdcC8AASs+fGqpF00s\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 24 Sep 2022 18:01:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "application/json; charset=utf-8 content type is not supported in the response body"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:8080",
+			"type": "any"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjdhNGQ1NmZjLTNmYmItNGQwMS1iODU5LWVmNzdiYzIwOWQ5YSIsImlhdCI6MTY2NTAwMDU4NCwiZXhwIjoxNjY1MDA0MTg0fQ.LOawTZGFRq6kdgo9OokhfRfIKz1CSQWbT6IeonWFnrk",
+			"type": "string"
+		}
+	]
+}

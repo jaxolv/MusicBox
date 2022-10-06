@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import ListUsersService from "../../services/user/ListUsersService";
-import { hashPassword } from "../../utils/HashPassword";
+// import HashPassword from "../../utils/HashPassword";
+import crypto from "node:crypto";
 
 export default class SessionController {
     constructor() { this.service = new ListUsersService() }
@@ -11,12 +12,12 @@ export default class SessionController {
         const user = await this.service.listOne(email)
 
         if (!user) {
-            return res.status(204).json({
+            return res.json({
                 error: "User not found!"
             })
         }
 
-        const hashedPass = hashPassword(password, process.env.PASSWORD_SALT)
+        const hashedPass = crypto.pbkdf2Sync(password, process.env.PASSWORD_SALT, 10000, 64, 'sha512').toString('hex');
 
         const isValidPassword = hashedPass === user.password
 
@@ -35,7 +36,7 @@ export default class SessionController {
                 born
             },
             token: jwt.sign({ id }, process.env.JWT_PRIVATE_KEY, {
-                expiresIn: "7d"
+                expiresIn: "5d"
             })
         })
     }

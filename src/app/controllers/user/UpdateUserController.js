@@ -8,7 +8,6 @@ export default class UpdateUserController {
         const {
             name,
             username,
-            password,
             email,
             born,
             country,
@@ -20,7 +19,6 @@ export default class UpdateUserController {
             id,
             name,
             username,
-            password,
             email,
             born,
             country,

@@ -26,6 +26,9 @@ routes.post("/members",
 routes.get("/members", (req, res) =>
     listMembersController.listByBand(req, res)
 );
+routes.get("/members", (req, res) =>
+    listMembersController.listAll(req, res)
+);
 routes.delete("/members/:id",
     PrimaryKeyValidator, (req, res) =>
     deleteMemberController.delete(req, res)

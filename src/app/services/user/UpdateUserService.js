@@ -7,7 +7,6 @@ export default class UpdateUserService {
         id,
         name,
         username,
-        password,
         email,
         born,
         country,
@@ -22,8 +21,7 @@ export default class UpdateUserService {
             const [numberRegisters] = await UsersModel.update(
                 {
                     name: name.toLowerCase(),
-                    username: username.toLowerCase(),
-                    password,
+                    username: username,
                     email: email.toLowerCase(),
                     born,
                     country: country.toUpperCase(),
@@ -42,7 +40,6 @@ export default class UpdateUserService {
                     id,
                     name,
                     username,
-                    password,
                     email,
                     born,
                     country,

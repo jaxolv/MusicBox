@@ -8,7 +8,11 @@ export default class ListMembersController {
 
         const resulte = await this.service.listMemberByName(name);
 
-        if (resulte.message) { return res.status(400).json(resulte) }
+        return res.json(resulte)
+    }
+
+    async listAll(req, res) {
+        const resulte = await this.service.listAll();
 
         return res.json(resulte)
     }
